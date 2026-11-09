@@ -1,0 +1,2 @@
+# Herdr generates API declarations for each local mod copy/version.
+mods/*/gpui-kit.d.ts
