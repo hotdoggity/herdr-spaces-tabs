@@ -23,59 +23,59 @@
   <text x="58" y="77" class="ui" fill="#9baac0" font-size="13">This computer</text>
   <path d="m264 70 4 4 4-4" fill="none" stroke="#68788d" stroke-width="1.5"/>
 
-  <rect x="12" y="96" width="260" height="38" rx="8" fill="#1b2939"/>
-  <path d="m27 111 4 4 4-4" fill="none" stroke="#a8b6c8" stroke-width="1.4"/>
-  <rect x="45" y="105" width="22" height="22" rx="6" fill="#4c9f9a"/>
-  <text x="56" y="121" text-anchor="middle" class="ui" fill="#f5ffff" font-size="12" font-weight="700">W</text>
-  <text x="78" y="121" class="ui" fill="#edf2fa" font-size="14" font-weight="600">web app</text>
-  <circle cx="250" cy="115" r="3" fill="#52b7a2"/>
-  <text x="70" y="159" class="ui" fill="#e5edf8" font-size="13">main</text>
-  <circle cx="60" cy="155" r="3" fill="#607086"/>
-  <rect x="48" y="169" width="214" height="30" rx="6" fill="#111d2b"/>
-  <circle cx="60" cy="184" r="3" fill="#607086"/>
-  <text x="70" y="189" class="ui" fill="#f1f5fc" font-size="13" font-weight="600">tests</text>
+  <rect x="12" y="96" width="260" height="32" rx="7" fill="#1b2939"/>
+  <path d="m27 108 4 4 4-4" fill="none" stroke="#a8b6c8" stroke-width="1.4"/>
+  <rect x="45" y="101" width="20" height="20" rx="6" fill="#4c9f9a"/>
+  <text x="55" y="115" text-anchor="middle" class="ui" fill="#f5ffff" font-size="12" font-weight="700">W</text>
+  <text x="76" y="115" class="ui" fill="#edf2fa" font-size="14" font-weight="600">web app</text>
+  <circle cx="250" cy="112" r="3" fill="#52b7a2"/>
+  <text x="66" y="146" class="ui" fill="#e5edf8" font-size="13">main</text>
+  <circle cx="56" cy="142" r="3" fill="#607086"/>
+  <rect x="44" y="151" width="218" height="25" rx="6" fill="#111d2b"/>
+  <circle cx="54" cy="163" r="3" fill="#607086"/>
+  <text x="64" y="168" class="ui" fill="#f1f5fc" font-size="13" font-weight="600">tests</text>
 
-  <rect x="12" y="208" width="260" height="36" rx="8" fill="transparent"/>
-  <path d="m27 221 4 4 4-4" fill="none" stroke="#8c9bb0" stroke-width="1.4"/>
-  <rect x="45" y="215" width="22" height="22" rx="6" fill="#b17862"/>
-  <text x="56" y="231" text-anchor="middle" class="ui" fill="#fff7f2" font-size="12" font-weight="700">A</text>
-  <text x="78" y="231" class="ui" fill="#c0cad9" font-size="14">api</text>
-  <circle cx="60" cy="260" r="3" fill="#607086"/>
-  <text x="70" y="264" class="ui" fill="#9baac0" font-size="13">server</text>
-  <circle cx="60" cy="290" r="3" fill="#607086"/>
-  <text x="70" y="294" class="ui" fill="#9baac0" font-size="13">docs</text>
+  <rect x="12" y="181" width="260" height="32" rx="8" fill="transparent"/>
+  <path d="m27 192 4 4 4-4" fill="none" stroke="#8c9bb0" stroke-width="1.4"/>
+  <rect x="45" y="187" width="20" height="20" rx="6" fill="#b17862"/>
+  <text x="55" y="201" text-anchor="middle" class="ui" fill="#fff7f2" font-size="12" font-weight="700">A</text>
+  <text x="76" y="201" class="ui" fill="#c0cad9" font-size="14">api</text>
+  <circle cx="56" cy="230" r="3" fill="#607086"/>
+  <text x="66" y="234" class="ui" fill="#9baac0" font-size="13">server</text>
+  <circle cx="56" cy="255" r="3" fill="#607086"/>
+  <text x="66" y="259" class="ui" fill="#9baac0" font-size="13">docs</text>
 
-  <path d="M0 388h284" stroke="#263141"/>
-  <text x="24" y="421" class="ui" fill="#8b9bb0" font-size="13" font-weight="600">Agents</text>
-  <text x="24" y="454" class="ui" fill="#48b9a7" font-size="12">Working  1</text>
-  <rect x="12" y="466" width="260" height="38" rx="8" fill="#182535"/>
-  <rect x="24" y="478" width="15" height="15" rx="4" fill="#3d5970"/>
-  <text x="48" y="491" class="ui" fill="#dce5f2" font-size="13">web app · main</text>
-  <circle cx="250" cy="485" r="4" fill="#48b9a7"/>
-  <text x="24" y="535" class="ui" fill="#8b9bb0" font-size="12">Idle  2</text>
-  <text x="24" y="566" class="ui" fill="#aab7c9" font-size="13">api · server</text>
-  <text x="24" y="595" class="ui" fill="#aab7c9" font-size="13">api · docs</text>
-  <path d="M0 662h284" stroke="#263141"/>
-  <text x="24" y="694" class="ui" fill="#9baac0" font-size="13">⚙  Settings</text>
+  <path d="M0 326h284" stroke="#263141"/>
+  <text x="24" y="354" class="ui" fill="#8b9bb0" font-size="13" font-weight="600">Agents</text>
+  <text x="24" y="383" class="ui" fill="#48b9a7" font-size="12">Working  1</text>
+  <rect x="12" y="395" width="260" height="32" rx="8" fill="#182535"/>
+  <rect x="24" y="404" width="14" height="14" rx="4" fill="#3d5970"/>
+  <text x="46" y="416" class="ui" fill="#dce5f2" font-size="13">web app · main</text>
+  <circle cx="250" cy="411" r="4" fill="#48b9a7"/>
+  <text x="24" y="456" class="ui" fill="#8b9bb0" font-size="12">Idle  2</text>
+  <text x="24" y="487" class="ui" fill="#aab7c9" font-size="13">api · server</text>
+  <text x="24" y="513" class="ui" fill="#aab7c9" font-size="13">api · docs</text>
+  <path d="M0 688h284" stroke="#263141"/>
+  <text x="24" y="711" class="ui" fill="#9baac0" font-size="13">⚙  Settings</text>
 
   <!-- Main work area. -->
-  <rect x="286" y="1" width="993" height="52" fill="#0c121d"/>
-  <path d="M286 53h993" stroke="#263141"/>
-  <rect x="307" y="9" width="196" height="36" rx="8" fill="#111b29" stroke="#31445b"/>
-  <text x="324" y="32" class="ui" fill="#e6edf8" font-size="14" font-weight="600">main</text>
-  <rect x="515" y="17" width="28" height="28" rx="7" fill="#15202e"/>
-  <path d="M529 23v16m-8-8h16" stroke="#aab7c9" stroke-width="1.5" stroke-linecap="round"/>
-  <circle cx="1227" cy="26" r="4" fill="#52657c"/>
+  <rect x="286" y="1" width="993" height="34" fill="#0c121d"/>
+  <path d="M286 35h993" stroke="#263141"/>
+  <rect x="297" y="3" width="196" height="28" rx="8" fill="#111b29" stroke="#31445b"/>
+  <text x="314" y="22" class="ui" fill="#e6edf8" font-size="14" font-weight="600">main</text>
+  <rect x="505" y="6" width="22" height="22" rx="7" fill="#15202e"/>
+  <path d="M516 11v12m-6-6h12" stroke="#aab7c9" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="1227" cy="18" r="4" fill="#52657c"/>
 
-  <rect x="302" y="69" width="961" height="40" rx="7" fill="#0d1521" stroke="#29384b"/>
-  <text x="322" y="95" class="ui" fill="#c4cfde" font-size="13">Terminal</text>
-  <circle cx="1242" cy="89" r="4" fill="#48b9a7"/>
-  <rect x="302" y="120" width="961" height="527" rx="7" fill="#0b1019" stroke="#34465d"/>
-  <text x="328" y="163" class="mono" fill="#8494a9" font-size="14">~/projects/web-app</text>
-  <text x="328" y="207" class="mono" fill="#58b5a7" font-size="14">$ git status --short</text>
-  <text x="328" y="238" class="mono" fill="#bdc9d8" font-size="14"> M src/app.ts</text>
-  <text x="328" y="282" class="mono" fill="#58b5a7" font-size="14">$ _</text>
-  <rect x="302" y="663" width="961" height="39" fill="#0b121c"/>
-  <path d="M286 662h993" stroke="#263141"/>
-  <text x="308" y="688" class="ui" fill="#8d9db2" font-size="12">This computer  ·  3 agents</text>
+  <rect x="294" y="44" width="977" height="30" rx="7" fill="#0d1521" stroke="#29384b"/>
+  <text x="310" y="64" class="ui" fill="#c4cfde" font-size="13">Terminal</text>
+  <circle cx="1248" cy="59" r="4" fill="#48b9a7"/>
+  <rect x="294" y="82" width="977" height="598" rx="7" fill="#0b1019" stroke="#34465d"/>
+  <text x="310" y="120" class="mono" fill="#8494a9" font-size="14">~/projects/web-app</text>
+  <text x="310" y="164" class="mono" fill="#58b5a7" font-size="14">$ git status --short</text>
+  <text x="310" y="193" class="mono" fill="#bdc9d8" font-size="14"> M src/app.ts</text>
+  <text x="310" y="230" class="mono" fill="#58b5a7" font-size="14">$ _</text>
+  <rect x="286" y="696" width="993" height="23" fill="#0b121c"/>
+  <path d="M286 695h993" stroke="#263141"/>
+  <text x="300" y="712" class="ui" fill="#8d9db2" font-size="12">This computer  ·  3 agents</text>
 </svg>

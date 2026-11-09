@@ -30,7 +30,7 @@
               "id": "agents",
               "type": "block",
               "content": {
-                "mod": "agents"
+                "mod": "agents-compact"
               },
               "size": {
                 "weight": 1
@@ -43,13 +43,13 @@
           "id": "sidebar-footer",
           "type": "block",
           "content": {
-            "mod": "workspace-chrome",
+            "mod": "workspace-chrome-compact",
             "props": {
               "footer": true
             }
           },
           "size": {
-            "px": 69
+            "px": 56
           }
         }
       ],
@@ -69,10 +69,10 @@
           "id": "tabs",
           "type": "block",
           "content": {
-            "mod": "tabs"
+            "mod": "tabs-compact"
           },
           "size": {
-            "px": 42
+            "px": 34
           },
           "window_drag": true
         },
@@ -88,10 +88,10 @@
                 "pane": {
                   "header": {
                     "content": {
-                      "mod": "pane"
+                      "mod": "pane-compact"
                     },
                     "reveal": "always",
-                    "height": 30,
+                    "height": 24,
                     "position": "top"
                   },
                   "background": "background",
@@ -139,17 +139,17 @@
               "hidden": true
             }
           ],
-          "padding": 8,
-          "gap": 8
+          "padding": 4,
+          "gap": 4
         },
         {
           "id": "status",
           "type": "block",
           "content": {
-            "mod": "workspace-status"
+            "mod": "workspace-status-compact"
           },
           "size": {
-            "px": 28
+            "px": 24
           }
         }
       ],
@@ -158,8 +158,8 @@
   ],
   "background": "canvas",
   "terminal_padding": [
-    14,
-    12
+    7,
+    6
   ],
   "divider": {
     "width": 1,

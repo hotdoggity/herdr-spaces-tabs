@@ -25,7 +25,7 @@ function place(s, ps) {
   const tabs = new Set((s.tabs ?? []).map((c) => c.id));
   return ps.find((p) => tabs.has(p.tab) && p.cwd)?.cwd || s.folder;
 }
-const rowHeight = ({ tree }) => (tree ? 28 : 30);
+const rowHeight = ({ tree }) => (tree ? 24 : 25);
 const where = (s, ps) => JSON.stringify([s.machine ?? null, place(s, ps)]);
 const base = (path) => path.replace(/\/+$/, "").split("/").pop();
 // Changes made outside Herdr (an editor's save, a commit in another app): looked
@@ -313,7 +313,7 @@ export default class Spaces extends View {
       return layout === "loading" || (!layout && this.machines.some(k => k.name === m && k.state === "connected"))
         || spaces().some(s => (s.machine ?? null) === m && !this.shown.has(s.id));
     };
-    const loadingRow = m => div().id(`machine-loading-${m ?? "local"}`).h(28).flex_none().px(8).text_size(12).text_color(t.dim).child(collapsed ? "…" : "Loading…");
+    const loadingRow = m => div().id(`machine-loading-${m ?? "local"}`).h(24).flex_none().px(4).text_size(12).text_color(t.dim).child(collapsed ? "…" : "Loading…");
     if (!remote.length) return loading(null) && !rows.length ? [loadingRow(null)] : rows.map(draw);
     const machineNames = [null, ...remote];
     return machineNames.flatMap((m) => {
@@ -323,7 +323,7 @@ export default class Spaces extends View {
       const connected = !m || machine?.state === "connected";
       const rebuilt = this.rebuilt(machine) || !!repair;
       const folded = this.folded.has(m);
-      const head = h_flex().id(`machine-${m ?? "local"}`).h(26).flex_none().px(collapsed ? 2 : 8).gap(7).items_center().text_size(11).text_color(t.dim)
+      const head = h_flex().id(`machine-${m ?? "local"}`).h(23).flex_none().px(collapsed ? 1 : 4).gap(4).items_center().text_size(11).text_color(t.dim)
         .cursor_pointer().hover(s => s.bg(t.hover))
         .on_click((_e, cx) => {
           folded ? this.folded.delete(m) : this.folded.add(m);
@@ -333,18 +333,18 @@ export default class Spaces extends View {
         .child(svg(`mods/workspace-chrome/${m ? "server" : "monitor"}.svg`).size(13).flex_none())
         .when(!collapsed, el => el.child(div().flex_1().truncate().child(m ?? "This computer"))
           .when(!connected && !rebuilt, el => el.child(div().flex_none().child((machine?.state ?? "asleep").replace(/_/g, " "))))
-          .when(rebuilt, el => el.child(h_flex().flex_none().gap(3).items_center()
+          .when(rebuilt, el => el.child(h_flex().flex_none().gap(2).items_center()
             .child(div().max_w(140).truncate().child(repair?.error || "rebuilt ·"))
             .child(div().id(`machine-connect-${m}`).text_color(repair?.error ? t.blocked : t.muted)
               .hover(s => s.text_color(t.foreground))
               .tooltip(repair?.error || "This machine was rebuilt or replaced. Click to connect to the new one.")
               .on_click((_e, cx) => { cx.stop_propagation(); this.reconnect(machine, cx); })
               .child(repair?.busy ? "Connecting…" : "Connect"))))
-          .when(connected, el => el.child(div().id(`machine-add-${m ?? "local"}`).flex_none().px(4).rounded(4).hover(s => s.bg(t.hover).text_color(t.foreground))
+          .when(connected, el => el.child(div().id(`machine-add-${m ?? "local"}`).flex_none().px(2).rounded(4).hover(s => s.bg(t.hover).text_color(t.foreground))
             .on_click((_e, cx) => { cx.stop_propagation(); run("space.new", { machine: m ?? "" }); }).child("+")))
           .child(div().size(6).rounded(3).flex_none().bg(connected ? t.ansi2 : t.dim))
           .child(svg(`mods/workspace-chrome/chevron-${folded ? "right" : "down"}.svg`).size(11).flex_none()));
-      const empty = h_flex().id(`machine-new-${m ?? "local"}`).h(28).flex_none().px(8).gap(7).items_center().rounded(7)
+      const empty = h_flex().id(`machine-new-${m ?? "local"}`).h(24).flex_none().px(4).gap(4).items_center().rounded(7)
         .text_size(12).text_color(t.dim).hover(s => s.bg(t.hover).text_color(t.foreground))
         .on_click(() => run("space.new", { machine: m ?? "" }))
         .child(svg("mods/workspace-chrome/plus.svg").size(12)).when(!collapsed, el => el.child("New space there"));
@@ -365,7 +365,7 @@ export default class Spaces extends View {
     return h_flex()
       .flex_1()
       .min_w(0)
-      .gap(5)
+      .gap(3)
       .justify_end()
       .items_center()
       .text_size(11.5)
@@ -386,11 +386,11 @@ export default class Spaces extends View {
   tabRow(space, tab, t) {
     return h_flex()
       .id(`space-tab-${tab.id}`)
-      .h(25)
+      .h(22)
       .flex_none()
-      .pl(37)
-      .pr(10)
-      .gap(8)
+      .pl(19)
+      .pr(5)
+      .gap(4)
       .items_center()
       .rounded(6)
       .text_size(11.5)
@@ -413,7 +413,7 @@ export default class Spaces extends View {
     return v_flex()
       .relative()
       .id(`space-${w.id}`)
-      .px(8)
+      .px(4)
       .h(rowHeight({ tree }))
       .flex_none()
       .justify_center()
@@ -452,13 +452,13 @@ export default class Spaces extends View {
       .on_mouse_down("right", () => this.menu(w))
       .child(
         h_flex()
-          .gap(9)
+          .gap(5)
           .items_center()
           .child(div().id(`space-tabs-toggle-${w.id}`).size(12).flex_none().flex().items_center().justify_center().cursor_pointer()
             .on_mouse_down("left", (_e, cx) => cx.stop_propagation())
             .on_mouse_up("left", (_e, cx) => { cx.stop_propagation(); this.toggleTabs(w.id, cx); })
             .child(svg(`mods/workspace-chrome/chevron-${this.collapsedTabs.has(w.id) ? "right" : "down"}.svg`).size(10).text_color(t.dim)))
-          .when(Boolean(tree), el => el.pl(4).child(svg("mods/workspace-chrome/branch.svg").size(13).text_color(t.dim)))
+          .when(Boolean(tree), el => el.pl(2).child(svg("mods/workspace-chrome/branch.svg").size(13).text_color(t.dim)))
           .when(!tree, el => el.child(h_flex().size(18).flex_none().rounded(5).bg(fill).items_center().justify_center().text_size(10.5).font_bold().text_color("#ffffff").child([...w.name][0]?.toUpperCase() ?? "?")))
           .child(div().flex_shrink(0).max_w(150).truncate().text_color(t.foreground).child(w.name))
           .child(g ? this.gitTail(g, tree, w.name, t) : div().flex_1()),
@@ -468,10 +468,10 @@ export default class Spaces extends View {
   compact({ w, i }, t) {
     return h_flex()
       .id(`space-${w.id}`)
-      .h(26)
+      .h(22)
       .flex_none()
       .justify_center()
-      .gap(4)
+      .gap(2)
       .when(w.active, (el) => el.bg(t.raised))
       .hover((s) => s.bg(t.hover))
       .on_click(() => run("space.select", { id: w.id }))
@@ -495,11 +495,11 @@ export default class Spaces extends View {
     }
     if (changed) setShared("space.colors", kept);
     return v_flex().size_full().min_h(0).bg(t.chrome).text_size(13)
-      .child(h_flex().h(31).pl(16).pr(10).items_center().justify_between().text_size(11.5).text_color(t.dim)
+      .child(h_flex().h(26).pl(8).pr(5).items_center().justify_between().text_size(11.5).text_color(t.dim)
         .when(!collapsed, el => el.child("Spaces"))
         .child(div().id("space-new").size(26).flex_none().flex().items_center().justify_center().rounded(6).hover(s => s.bg(t.hover).text_color(t.foreground))
           .on_click(() => run("space.new")).child(svg("mods/workspace-chrome/plus.svg").size(14))))
-      .child(v_flex().flex_1().min_h(0).px(8).pb(14).overflow_y_scrollbar().mode("always")
+      .child(v_flex().flex_1().min_h(0).px(4).pb(7).overflow_y_scrollbar().mode("always")
         .on_mouse_up("left", (_e, cx) => { this.pressed = null; cx.notify(); })
         .children(this.grouped(t, collapsed)));
   }

@@ -1,14 +1,15 @@
 # Tabs Under Spaces
 
-The sidebar starts with **Spaces** and no brand banner. Each space has an expanded-by-default, indented tab list; its chevron folds that list, and the active tab is identified by white text rather than a selected-row fill. The Agents list remains below. The illustration uses generic space and tab names.
+The sidebar starts with **Spaces** and no brand banner. Each space has an expanded-by-default, indented tab list; its chevron folds that list, and the active tab is identified by white text rather than a selected-row fill. Spacing throughout the layout is tightened to roughly half the original padding and gaps while keeping text sizes legible. The Agents list remains below. The illustration uses generic space and tab names.
 
 ![Tabs Under Spaces](preview.png)
 
 ## What you see
 
 - **Left sidebar (268 px):** Spaces above Agents, with a 69 px footer. Space rows keep colored avatars and machine grouping. The Spaces section has no Herdr logo/header block above it.
-- **Tab rows:** each is 25 px high, indented 37 px from the list edge. The active name uses the theme foreground; inactive names use muted text. Status dots use the theme's `working`, `blocked`, `done`, or `idle` color when the tab has that status. No selected-row fill is used; hover uses the theme's `hover` color.
-- **Main area:** 42 px tab bar, active tab with its pane header, and 28 px status bar. The optional 368 px Files/Changes panel starts hidden.
+- **Tab rows:** each is 22 px high, indented 19 px from the list edge. Space rows are 25 px high (24 px for worktree rows). The active tab name uses the theme foreground; inactive names use muted text. Status dots use the theme's `working`, `blocked`, `done`, or `idle` color when the tab has that status. No selected-row fill is used; hover uses the theme's `hover` color.
+- **Main area:** 34 px tab bar, 24 px pane header, 24 px status bar, and 4 px work-area padding/gap. Terminal padding is `[7, 6]`. The optional 368 px Files/Changes panel starts hidden.
+- **Agents/footer:** compact row heights and about half the prior horizontal/vertical padding; the sidebar footer is 56 px.
 - Colors follow Herdr's current theme (`chrome`, `canvas`, `background`, `border`, `accent`, and status colors).
 
 ## How it behaves
@@ -21,9 +22,9 @@ The sidebar starts with **Spaces** and no brand banner. Each space has an expand
 
 ## Built from
 
-- `layouts/main-tabs.json`: root row with a sidebar column and a work column. The sidebar contains a vertical Spaces/Agents split and footer. The work column contains the tab bar, active tab/pane, hidden Files/Changes stack, and status bar. `layouts/main-tabs.png` is the settings preview.
+- `layouts/main-tabs.json`: root row with a sidebar column and a work column. The sidebar contains a vertical Spaces/Agents split and footer. The work column contains the tab bar, active tab/pane, hidden Files/Changes stack, and status bar. Its work-body padding and gap are 4 px; terminal padding is `[7, 6]`. `layouts/main-tabs.png` is the settings preview.
 - `mods/spaces-with-tabs/main.js`: clone of Herdr's shipped `spaces` mod with an extra row for each tab, per-space expand/collapse, and `tab.select` on tab-row click. `mod.json` names the panel. It uses `spaces()`, `machines()`, `panes()`, `layout()`, `theme()`, `shared()`/`setShared()`, `watchFolder()`, `exec()`, `hc()`, `openOverlay()`, and `run()`.
-- The custom mod calls `tab.select`, `space.select`, `space.move`, and `space.new`. It also uses the shipped `menu` for the space context menu and shipped `workspace-chrome` SVG assets. The layout uses Herdr's shipped `agents`, `changes`, `files`, `menu`, `pane`, `tabs`, `workspace-chrome`, and `workspace-status` mods.
+- `agents-compact`, `tabs-compact`, `pane-compact`, `workspace-status-compact`, and `workspace-chrome-compact` are spacing-only clones of the corresponding shipped mods. The custom mod calls `tab.select`, `space.select`, `space.move`, and `space.new`; it also uses the shipped `menu` for the space context menu and shipped `workspace-chrome` SVG assets. The layout still uses shipped `changes`, `files`, and `menu`.
 
 ## Watch out
 
